@@ -1,22 +1,22 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Phone, Star, ShieldCheck, Clock, Award, Wrench, CheckCircle2, Droplets, Zap } from 'lucide-react';
-import { BUSINESS_DETAILS, HOMEPAGE_FAQS, JAIPUR_LOCALITIES, SERVICES_LIST } from '@/src/data/content';
+import { BUSINESS_DETAILS, HOMEPAGE_FAQS, HOMEPAGE_TESTIMONIALS, BANGALORE_LOCALITIES, SERVICES_LIST } from '@/src/data/content';
 import { LeadForm } from '@/src/components/LeadForm';
 import { FAQAccordion } from '@/src/components/FAQAccordion';
-import { GoogleReviewsSection } from '@/src/components/GoogleReviewsSection';
-import { GoogleLocationSection } from '@/src/components/GoogleLocationSection';
+import { ReviewCarousel } from '@/src/components/ReviewCarousel';
 
 export const metadata: Metadata = {
-  title: 'ro-service centre | Best RO Water Purifier Repair & Service Jaipur | Call 08440970923',
+  title: 'Bangalore Service Centre | Best RO Water Purifier Repair & Service Bangalore | Call 080502 91180',
   description:
-    'Fastest 60–90 min doorstep RO water purifier repair, filter replacement, AMC & installation service in Jaipur. Expert technicians in Mansarovar, Ganpati Nagar & across Jaipur. Call 08440970923.',
+    'Fastest 60–90 min doorstep RO water purifier repair, filter replacement, AMC & installation service in Bangalore. Expert technicians for Kent, Aquaguard, Pureit, AO Smith & LG.',
   alternates: {
-    canonical: 'https://ro-servicecentre.in',
+    canonical: 'https://www.roservice24x7.in',
   },
   openGraph: {
-    title: 'ro-service centre | Best RO Water Purifier Repair & Maintenance Jaipur',
-    description: 'Fastest 60–90 min doorstep RO water purifier repair, filter replacement & AMC in Mansarovar, Jaipur.',
-    url: 'https://ro-servicecentre.in',
+    title: 'Bangalore Service Centre | Best RO Water Purifier Repair & Maintenance Bangalore',
+    description: 'Fastest 60–90 min doorstep RO water purifier repair, filter replacement & AMC in Bangalore.',
+    url: 'https://www.roservice24x7.in',
     type: 'website',
   },
 };
@@ -25,50 +25,54 @@ export default function HomePage() {
   const homeServices = [
     {
       title: 'RO Water Purifier Repair & Service',
-      description: 'Complete troubleshooting and repair for power issues, water leakage, low flow, and pump failure in Jaipur.',
+      description: 'Complete troubleshooting and repair for power, leakage, and thermostat issues.',
     },
     {
-      title: 'Water Purifier Filter Replacement',
-      description: 'Genuine sediment cartridge, activated carbon, and high-TDS rejection RO membrane replacement.',
+      title: 'RO Water Purifier Repair',
+      description: 'Fix purification problems, filter issues, low flow, and error indicators.',
     },
     {
       title: 'Installation & Uninstallation Support',
-      description: 'Safe and professional wall-mount installation, dismantling, or relocation of all RO brands.',
+      description: 'Safe and professional installation or removal of RO appliances.',
     },
     {
       title: 'Annual Maintenance Contracts (AMC)',
-      description: 'Affordable AMC plans for scheduled preventive servicing, free filter checkups, and zero breakdown labor.',
+      description: 'Affordable AMC plans for regular servicing and preventive maintenance.',
     },
     {
       title: 'Genuine Spare Parts Replacement',
-      description: 'High-quality booster pumps, tested SMPS adapters, solenoid valves, and food-grade silicone tubing.',
+      description: 'Only high-quality and compatible spare parts used for long-term reliability.',
     },
   ];
 
   const homeProblems = [
-    'Water purifier not purifying or dispensing water properly',
-    'RO machine water leakage from bottom, pipes, or connectors',
-    'Low water flow or very slow storage tank refilling in high-TDS Jaipur water',
-    'Foul smell, bitter taste, or high TDS reading in purified water',
-    'Continuous beeping alert, red error lights, or loud booster pump buzzing',
+    'Water purifier not purifying water properly',
+    'RO machine leakage, power failure, or tripping issues',
+    'RO not purifying water effectively',
+    'Low water flow or slow dispensing from RO purifier',
+    'Error lights, warning indicators, or unusual noise',
   ];
 
   const whyChoosePoints = [
     {
       title: 'Experienced & Verified Technicians',
-      description: 'Skilled professionals trained to service Kent, Aquaguard, Pureit, AO Smith, and all RO models.',
+      description: 'Skilled professionals trained to handle all RO models.',
     },
     {
-      title: 'Same-Day Doorstep Service in Jaipur',
-      description: 'Fast 60-90 minute doorstep arrival across Mansarovar, Ganpati Nagar, and all Jaipur localities.',
+      title: 'Same-Day Doorstep Service',
+      description: 'Fast response and quick service at your location.',
     },
     {
-      title: 'Support for All RO Models & Brands',
-      description: 'Complete repair and maintenance for old, new, and commercial water purification systems.',
+      title: 'Affordable & Transparent Pricing',
+      description: 'No hidden charges, clear cost estimates.',
+    },
+    {
+      title: 'Support for All RO Models',
+      description: 'Old and new water purifiers and RO systems covered.',
     },
     {
       title: 'Customer Satisfaction Guaranteed',
-      description: '5.0 Star rated service on Google Maps with 30-day labor warranty on all repairs.',
+      description: 'Quality service you can trust.',
     },
   ];
 
@@ -77,25 +81,22 @@ export default function HomePage() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: BUSINESS_DETAILS.name,
-      url: 'https://ro-servicecentre.in',
       image: BUSINESS_DETAILS.logoUrl,
       telephone: `+91${BUSINESS_DETAILS.phone}`,
       email: BUSINESS_DETAILS.email,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: BUSINESS_DETAILS.streetAddress,
-        addressLocality: 'Jaipur',
-        addressRegion: 'Rajasthan',
-        postalCode: '302029',
+        addressLocality: 'Bangalore',
+        addressRegion: 'Karnataka',
+        postalCode: '560001',
         addressCountry: 'IN',
       },
-      hasMap: BUSINESS_DETAILS.googleMapsUrl,
-      areaServed: JAIPUR_LOCALITIES.map((loc) => ({
+      areaServed: BANGALORE_LOCALITIES.map((loc) => ({
         '@type': 'Place',
-        name: `${loc}, Jaipur`,
+        name: `${loc}, Bangalore`,
       })),
       priceRange: '₹299 - ₹3500',
-      description: 'Doorstep RO water purifier repair, filter replacement, membrane overhaul and AMC service across Mansarovar and Jaipur.',
+      description: 'Doorstep RO water purifier repair, filter replacement, membrane overhaul and AMC service across Bangalore.',
     },
     {
       '@context': 'https://schema.org',
@@ -144,16 +145,15 @@ export default function HomePage() {
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div className="animate-slideInLeft">
-              
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-3 drop-shadow-lg">
                 Doorstep RO Water Purifier
                 <span className="block mt-1 bg-gradient-to-r from-sky-300 via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-                  Repair &amp; Service in Jaipur
+                  Repair &amp; Service in Bangalore
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base font-semibold mb-5 sm:mb-6 text-blue-100 drop-shadow max-w-lg mx-auto">
-                Fast, Reliable, Affordable doorstep service across Jaipur (60–90 mins)
+                Fast, Reliable, Affordable doorstep service across Bangalore (60–90 mins)
               </p>
 
               {/* Action Buttons */}
@@ -162,12 +162,12 @@ export default function HomePage() {
                   href={`tel:${BUSINESS_DETAILS.phone}`}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-white text-[#1a1a1a] font-bold text-xs sm:text-sm shadow-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-1.5 whitespace-nowrap"
                 >
-                  <Phone className="w-4 h-4 text-[#0c54a0]" />
+                  <Phone className="w-4 h-4 text-[#1d63d8]" />
                   <span>Call Now</span>
                 </a>
                 <a
                   href="#lead-form"
-                  className="flex-1 px-4 py-2.5 rounded-xl bg-[#0c54a0] hover:bg-[#09417d] text-white font-bold text-xs sm:text-sm shadow-lg transition-all text-center whitespace-nowrap flex items-center justify-center"
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-[#1d63d8] hover:bg-[#154db0] text-white font-bold text-xs sm:text-sm shadow-lg transition-all text-center whitespace-nowrap flex items-center justify-center"
                 >
                   Book Service
                 </a>
@@ -187,8 +187,8 @@ export default function HomePage() {
         {/* SECTION 1: OUR RO SERVICES */}
         <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0c54a0] mb-8">
-              Our RO Water Purifier Services in Jaipur
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1d63d8] mb-8">
+              Our RO Water Purifier Services
             </h2>
 
             <div className="space-y-6 text-slate-700">
@@ -207,7 +207,7 @@ export default function HomePage() {
         {/* SECTION 2: COMMON RO PROBLEMS WE FIX */}
         <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0c54a0] mb-8 leading-snug">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1d63d8] mb-8 leading-snug">
               Common RO Problems We Fix
             </h2>
 
@@ -224,8 +224,8 @@ export default function HomePage() {
         {/* SECTION 3: WHY CHOOSE US */}
         <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0c54a0] mb-8">
-              Why Choose ro-service centre<br className="hidden sm:inline" /> in Jaipur?
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#006ce4] mb-8">
+              Why Choose Bangalore Service Centre<br className="hidden sm:inline" /> Service Center?
             </h2>
 
             <div className="space-y-5 text-slate-700">
@@ -244,46 +244,86 @@ export default function HomePage() {
         {/* BOOK SERVICE TODAY CTA */}
         <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0c54a0] mb-4">
-              Book RO Service in Jaipur Today
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1d63d8] mb-4">
+              Book RO Service Today
             </h2>
             <p className="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Get fast, dependable, and professional RO repair service at your doorstep in Mansarovar, Ganpati Nagar, and all Jaipur areas. Our support team is ready to assist you.
+              Get fast, dependable, and professional RO repair service at your doorstep. Our support team is ready to assist you with quick booking and immediate service scheduling.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <a 
-                href={`tel:${BUSINESS_DETAILS.phone}`}
-                className="bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm rounded-xl px-6 py-4 flex items-center gap-3 w-full sm:w-auto justify-center transition-colors"
-              >
+              <div className="bg-slate-50 border border-slate-200 shadow-sm rounded-xl px-6 py-4 flex items-center gap-3 w-full sm:w-auto justify-center">
                 <span className="text-2xl">📞</span>
-                <span className="text-slate-800 font-semibold">Call {BUSINESS_DETAILS.phone} for RO Support</span>
-              </a>
+                <span className="text-slate-800 font-semibold">Call Now for RO Service Support</span>
+              </div>
               <div className="bg-slate-50 border border-slate-200 shadow-sm rounded-xl px-6 py-4 flex items-center gap-3 w-full sm:w-auto justify-center">
                 <span className="text-2xl">⏱</span>
-                <span className="text-slate-800 font-semibold">60–90 Min Same-Day Dispatch</span>
+                <span className="text-slate-800 font-semibold">Same-Day Service Available</span>
               </div>
             </div>
 
-            <div className="bg-slate-50 border border-[#0c54a0]/20 shadow-md rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Need Immediate RO Repair?</h3>
+            <div className="bg-slate-50 border border-[#1d63d8]/20 shadow-md rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Need More Help?</h3>
               <p className="text-slate-600 text-sm sm:text-base">
-                Call our direct helpline at <strong className="text-slate-900 font-bold">{BUSINESS_DETAILS.phone}</strong> for quick technician dispatch to your home or office in Jaipur.
+                Connect instantly with our dedicated support team for service requests, pricing details, or technical assistance
               </p>
             </div>
           </div>
         </section>
 
-        {/* GOOGLE REVIEWS SECTION */}
-        <GoogleReviewsSection />
+        {/* VERIFIED REVIEWS */}
+        <section className="py-12 sm:py-16 bg-slate-50 border-b border-slate-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              Customer Feedback
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1d63d8] mb-8">
+              What Our Customers Say
+            </h2>
 
-        {/* GOOGLE MAPS LOCATION & SERVICE CENTRE EMBED */}
-        <GoogleLocationSection />
+            <ReviewCarousel testimonials={HOMEPAGE_TESTIMONIALS} />
+          </div>
+        </section>
 
         {/* FAQ SECTION */}
         <section className="py-12 sm:py-16 bg-white border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FAQAccordion faqs={HOMEPAGE_FAQS} brandColor="#0c54a0" />
+            <FAQAccordion faqs={HOMEPAGE_FAQS} brandColor="#1d63d8" />
+          </div>
+        </section>
+
+        {/* MSME CERTIFIED BADGE */}
+        <section className="py-10 bg-slate-50/80">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center justify-center shrink-0">
+                <img
+                  src="https://res.cloudinary.com/dieq3fjuv/image/upload/w_210,h_140,c_fill,q_auto,f_auto/v1786037616/file_000000005ba8821198056a961ff1f0c2_fahl4d.png"
+                  alt="Government of India MSME Certified"
+                  width="160"
+                  height="100"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-16 sm:h-20 w-auto aspect-[3/2] object-contain max-w-full"
+                />
+              </div>
+
+              <div className="flex-1 flex flex-col items-center sm:items-start">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
+                  MSME Certified Water Purifier Service
+                </h3>
+                
+                <p className="text-xs sm:text-sm text-slate-500 mb-2.5 max-w-md">
+                  Officially recognized enterprise for trusted doorstep RO repair, maintenance &amp; filter replacement in Bangalore.
+                </p>
+
+                <div className="inline-flex items-center gap-1.5 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-xs">
+                  <span className="text-slate-300 font-medium text-[11px]">MSME Reg:</span>
+                  <span className="text-amber-300 font-mono font-bold">UDYAM-KR-03-0561611</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

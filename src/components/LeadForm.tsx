@@ -15,24 +15,12 @@ interface LeadFormProps {
   hideServiceSelector?: boolean;
 }
 
-const getServiceOptionsForBrand = (brandName: string): string[] => {
-  const cleanBrand = (brandName || '')
-    .replace(/\s*\/.*$/, '')
-    .replace(/\s*\(.*\)$/, '')
-    .trim();
-
-  const displayName =
-    cleanBrand.length > 0 && cleanBrand.toLowerCase() !== 'others' && cleanBrand.toLowerCase() !== 'multi-brand'
-      ? cleanBrand
-      : 'RO';
-
-  return [
-    `${displayName} water purifier service`,
-    `${displayName} water purifier repair`,
-    `${displayName} water purifier filter replacement`,
-    `${displayName} water purifier amc`,
-  ];
-};
+const SERVICE_OPTIONS: string[] = [
+  'RO Water Purifier Service',
+  'RO Water Purifier Repair',
+  'RO Water Purifier Filter Replacement',
+  'RO Water Purifier AMC',
+];
 
 export const LeadForm: React.FC<LeadFormProps> = ({
   preselectedBrand = '',
@@ -44,14 +32,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({
   hideServiceSelector = false,
 }) => {
   const initialBrand = preselectedBrand || 'Kent';
-  const initialServices = getServiceOptionsForBrand(initialBrand);
 
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
     mobileNumber: '',
     pinCode: '',
     selectedBrand: initialBrand,
-    serviceType: initialServices[0],
+    serviceType: SERVICE_OPTIONS[0],
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -75,15 +62,11 @@ export const LeadForm: React.FC<LeadFormProps> = ({
     'Other Brands',
   ];
 
-  const serviceOptions = getServiceOptionsForBrand(formData.selectedBrand);
-
   useEffect(() => {
     if (preselectedBrand) {
-      const opts = getServiceOptionsForBrand(preselectedBrand);
       setFormData((prev) => ({
         ...prev,
         selectedBrand: preselectedBrand,
-        serviceType: opts[0],
       }));
     }
   }, [preselectedBrand]);
@@ -106,7 +89,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
     const cleanPin = formData.pinCode.replace(/\D/g, '');
     if (cleanPin && cleanPin.length !== 6) {
-      newErrors.pinCode = 'Jaipur Pincode should be 6 digits (e.g. 302029)';
+      newErrors.pinCode = 'Bangalore Pincode should be 6 digits (e.g. 560001)';
     }
 
     setErrors(newErrors);
@@ -115,16 +98,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    if (name === 'selectedBrand') {
-      const opts = getServiceOptionsForBrand(value);
-      setFormData((prev) => ({
-        ...prev,
-        selectedBrand: value,
-        serviceType: opts[0],
-      }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -144,7 +118,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       const payload = new FormData();
       payload.append('fullName', formData.fullName);
       payload.append('mobileNumber', formData.mobileNumber);
-      payload.append('pinCode', formData.pinCode || 'Jaipur 302029');
+      payload.append('pinCode', formData.pinCode || 'Bangalore');
       payload.append('selectedBrand', formData.selectedBrand);
       payload.append('serviceType', formData.serviceType || 'RO Repair');
       payload.append('sourcePage', sourcePage);
@@ -167,7 +141,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           mobileNumber: '',
           pinCode: '',
           selectedBrand: preselectedBrand || 'Kent',
-          serviceType: 'RO Repair / Servicing',
+          serviceType: SERVICE_OPTIONS[0],
         });
       } else {
         setIsSuccess(true);
@@ -351,7 +325,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                       onChange={handleChange}
                       className="w-full pl-11 pr-10 py-3.5 text-[15px] bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-[#0c54a0] focus:outline-none transition-all appearance-none cursor-pointer capitalize font-medium text-slate-800"
                     >
-                      {serviceOptions.map((option) => (
+                      {SERVICE_OPTIONS.map((option) => (
                         <option key={option} value={option}>
                           {option}
                         </option>
@@ -412,7 +386,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                       onChange={handleChange}
                       className="w-full pl-11 pr-10 py-3.5 text-[15px] bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-[#0c54a0] focus:outline-none transition-all appearance-none cursor-pointer capitalize font-medium text-slate-800"
                     >
-                      {serviceOptions.map((option) => (
+                      {SERVICE_OPTIONS.map((option) => (
                         <option key={option} value={option}>
                           {option}
                         </option>
