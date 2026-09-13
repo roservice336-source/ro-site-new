@@ -17,6 +17,8 @@ export const BUSINESS_DETAILS = {
   workingHours: '8:00 AM - 9:00 PM (All 7 Days)',
   email: 'contact@ro-servicecentre.in',
   formSubmitEmail: 'contact@ro-servicecentre.in',
+  domain: 'ro-servicecentre.in',
+  websiteUrl: 'https://ro-servicecentre.in',
   googleMapsUrl: 'https://maps.app.goo.gl/pPcnb3oRyskChHR46?g_st=awb',
   mapEmbedUrl: 'https://maps.google.com/maps?q=RO+service+centre,+ISKCON+road,+Ganpati+Nagar,+Mansarovar,+Jaipur,+Rajasthan+302029&output=embed',
   disclaimer: 'Disclaimer: ro-service centre is an independent multi-brand water purifier service center in Jaipur. We provide repair, maintenance, and genuine filter replacement services. Brand names and logos are used strictly for identification and compatibility purposes.',

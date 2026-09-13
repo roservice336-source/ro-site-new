@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ro-servicecentre.in';
-  const lastModified = new Date('2026-08-06');
+  const baseUrl = 'https://ro-servicecentre.in';
+  const lastModified = new Date('2026-09-13');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

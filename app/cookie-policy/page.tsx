@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Cookie Policy | ro-service centre Jaipur',
   description: 'Cookie Policy for ro-service centre Jaipur. Information regarding cookies, session storage and analytics.',
   alternates: {
-    canonical: 'https://www.ro-servicecentre.in/cookie-policy',
+    canonical: 'https://ro-servicecentre.in/cookie-policy',
   },
 };
 

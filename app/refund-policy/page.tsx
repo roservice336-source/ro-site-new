@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Refund & Return Policy | ro-service centre Jaipur',
   description: 'Cancellation and refund terms for doorstep RO water purifier repair, inspection fee policy, and 30-day labor warranty in Jaipur.',
   alternates: {
-    canonical: 'https://www.ro-servicecentre.in/refund-policy',
+    canonical: 'https://ro-servicecentre.in/refund-policy',
   },
 };
 

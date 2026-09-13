@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Terms and Conditions | ro-service centre Jaipur',
   description: 'Terms and conditions for doorstep RO water purifier repair, maintenance, installation and filter replacement services by ro-service centre in Jaipur.',
   alternates: {
-    canonical: 'https://www.ro-servicecentre.in/terms-of-service',
+    canonical: 'https://ro-servicecentre.in/terms-of-service',
   },
 };
 

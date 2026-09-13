@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | ro-service centre Jaipur',
   description: 'Privacy Policy for ro-service centre. Learn how we handle and protect customer information for doorstep RO water purifier repair in Jaipur.',
   alternates: {
-    canonical: 'https://www.ro-servicecentre.in/privacy-policy',
+    canonical: 'https://ro-servicecentre.in/privacy-policy',
   },
 };
 

@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   description:
     'Fastest 60–90 min doorstep RO water purifier repair, filter replacement, AMC & installation service in Jaipur. Expert technicians in Mansarovar, Ganpati Nagar & across Jaipur. Call 08440970923.',
   alternates: {
-    canonical: 'https://www.ro-servicecentre.in',
+    canonical: 'https://ro-servicecentre.in',
   },
   openGraph: {
     title: 'ro-service centre | Best RO Water Purifier Repair & Maintenance Jaipur',
     description: 'Fastest 60–90 min doorstep RO water purifier repair, filter replacement & AMC in Mansarovar, Jaipur.',
-    url: 'https://www.ro-servicecentre.in',
+    url: 'https://ro-servicecentre.in',
     type: 'website',
   },
 };
@@ -77,6 +77,7 @@ export default function HomePage() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: BUSINESS_DETAILS.name,
+      url: 'https://ro-servicecentre.in',
       image: BUSINESS_DETAILS.logoUrl,
       telephone: `+91${BUSINESS_DETAILS.phone}`,
       email: BUSINESS_DETAILS.email,
