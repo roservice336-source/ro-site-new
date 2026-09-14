@@ -116,7 +116,7 @@ export default async function BrandPage({ params }: PageProps) {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_DETAILS.name,
-        telephone: `+91${BUSINESS_DETAILS.phone.replace(/^0|\s+/g, '')}`,
+        telephone: `+91${BUSINESS_DETAILS.phone}`,
       },
       areaServed: {
         '@type': 'City',

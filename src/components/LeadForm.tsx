@@ -181,7 +181,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           </div>
           <div className="pt-6 flex flex-col items-center justify-center gap-3">
             <a
-              href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
+              href={`tel:${BUSINESS_DETAILS.phone}`}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#0c54a0] hover:bg-blue-700 text-white font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
             >
               <Phone className="w-5 h-5" />

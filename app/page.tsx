@@ -7,7 +7,7 @@ import { FAQAccordion } from '@/src/components/FAQAccordion';
 import { ReviewCarousel } from '@/src/components/ReviewCarousel';
 
 export const metadata: Metadata = {
-  title: 'Bangalore Service Centre | Best RO Water Purifier Repair & Service Bangalore | Call 090083 15606',
+  title: 'Bangalore Service Centre | Best RO Water Purifier Repair & Service Bangalore | Call 080502 91180',
   description:
     'Fastest 60–90 min doorstep RO water purifier repair, filter replacement, AMC & installation service in Bangalore. Expert technicians for Kent, Aquaguard, Pureit, AO Smith & LG.',
   alternates: {
@@ -82,7 +82,7 @@ export default function HomePage() {
       '@type': 'LocalBusiness',
       name: BUSINESS_DETAILS.name,
       image: BUSINESS_DETAILS.logoUrl,
-      telephone: `+91${BUSINESS_DETAILS.phone.replace(/^0|\s+/g, '')}`,
+      telephone: `+91${BUSINESS_DETAILS.phone}`,
       email: BUSINESS_DETAILS.email,
       address: {
         '@type': 'PostalAddress',
@@ -159,7 +159,7 @@ export default function HomePage() {
               {/* Action Buttons */}
               <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-sm mx-auto mb-8 sm:mb-12">
                 <a
-                  href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
+                  href={`tel:${BUSINESS_DETAILS.phone}`}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-white text-[#1a1a1a] font-bold text-xs sm:text-sm shadow-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-1.5 whitespace-nowrap"
                 >
                   <Phone className="w-4 h-4 text-[#1d63d8]" />

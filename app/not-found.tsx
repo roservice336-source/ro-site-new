@@ -26,7 +26,7 @@ export default function NotFound() {
             <span>Go Home</span>
           </Link>
           <a
-            href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
+            href={`tel:${BUSINESS_DETAILS.phone}`}
             className="flex-1 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
           >
             <Phone className="w-4 h-4" />

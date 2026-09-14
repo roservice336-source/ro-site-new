@@ -21,7 +21,7 @@ export const CallWidgets: React.FC<CallWidgetsProps> = ({
   const pathname = usePathname() || '/';
   const currentRoute = propCurrentRoute || (pathname as PageRoute);
   const phone = customPhone || BUSINESS_DETAILS.phone;
-  const telLink = `tel:${phone.replace(/\s+/g, '')}`;
+  const telLink = `tel:${phone}`;
   const theme = getBrandTheme(currentRoute, lastBrandRoute);
 
   return (

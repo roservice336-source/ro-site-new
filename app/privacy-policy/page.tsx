@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="border-t border-slate-100 pt-6 mt-8">
               <p className="text-xs text-slate-500 font-medium">
-                For questions regarding this policy or data inquiries, contact us at <a href={`mailto:${BUSINESS_DETAILS.email}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.email}</a> or call our support line <a href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.phone}</a>.
+                For questions regarding this policy or data inquiries, contact us at <a href={`mailto:${BUSINESS_DETAILS.email}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.email}</a> or call our support line <a href={`tel:${BUSINESS_DETAILS.phone}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.phone}</a>.
               </p>
             </div>
           </div>
