@@ -54,7 +54,7 @@ export const LocalitiesGrid: React.FC = () => {
 
         {filteredLocalities.length === 0 && (
           <p className="text-center text-xs text-slate-500 py-4">
-            No exact match found, but we service ALL areas across Bangalore! Call 8050291180 to check technician availability.
+            No exact match found, but we service ALL areas across Bangalore! Call 090083 15606 to check technician availability.
           </p>
         )}
       </div>

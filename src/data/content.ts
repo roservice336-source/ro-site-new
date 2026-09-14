@@ -4,9 +4,9 @@ export const BUSINESS_DETAILS = {
   name: 'Bangalore Service Centre',
   fullName: 'Bangalore Service Centre - Water Purifier Repair & Maintenance',
   logoUrl: 'https://i.ibb.co/k6cRgnyt/IMG-20260805-WA0010.jpg',
-  phone: '08050291180',
-  formattedPhone: '080502 91180',
-  whatsappNumber: '918050291180',
+  phone: '090083 15606',
+  formattedPhone: '090083 15606',
+  whatsappNumber: '919008315606',
   address: 'Bangalore, Karnataka, India',
   city: 'Bangalore',
   state: 'Karnataka',
@@ -438,7 +438,7 @@ export const BANGALORE_LOCALITIES = [
 export const HOMEPAGE_FAQS: FAQItem[] = [
   {
     question: 'How quickly can a service technician visit my home in Bangalore?',
-    answer: 'We provide prompt 60 to 90 minute doorstep service across all Bangalore areas including Whitefield, Koramangala, HSR Layout, Indiranagar, Electronic City, Marathahalli, Bellandur, Hebbal, and Jayanagar. You can book online or call 080502 91180 for immediate dispatch.',
+    answer: 'We provide prompt 60 to 90 minute doorstep service across all Bangalore areas including Whitefield, Koramangala, HSR Layout, Indiranagar, Electronic City, Marathahalli, Bellandur, Hebbal, and Jayanagar. You can book online or call 090083 15606 for immediate dispatch.',
   },
   {
     question: 'Which water purifier brands do you repair and service in Bangalore?',
@@ -477,7 +477,7 @@ export const HOMEPAGE_TESTIMONIALS: Testimonial[] = [
     locality: 'Whitefield, Bangalore',
     rating: 5,
     brandServiced: 'Kent Grand Plus',
-    comment: 'My Kent RO started leaking from the bottom connectors. The technician arrived within 40 minutes of calling 080502 91180, fixed the leak, and replaced the sediment filter cleanly. Very transparent pricing!',
+    comment: 'My Kent RO started leaking from the bottom connectors. The technician arrived within 40 minutes of calling 090083 15606, fixed the leak, and replaced the sediment filter cleanly. Very transparent pricing!',
     date: '2 days ago',
   },
   {

@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Bangalore Doorstep Service</span>
               <span>•</span>
               <a
-                href={`tel:${BUSINESS_DETAILS.phone}`}
+                href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
                 className="font-bold text-white hover:underline flex items-center gap-1"
               >
                 <Phone className="w-3 h-3 text-white/80" />
@@ -244,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Right Action Call Button */}
             <div className="hidden sm:flex items-center gap-3">
               <a
-                href={`tel:${BUSINESS_DETAILS.phone}`}
+                href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
                 style={{
                   background: `linear-gradient(135deg, ${brandTheme.gradientFrom}, ${brandTheme.gradientTo})`,
                 }}
@@ -258,7 +258,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Menu Button */}
             <div className="flex lg:hidden items-center gap-2">
               <a
-                href={`tel:${BUSINESS_DETAILS.phone}`}
+                href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`}
                 style={{ backgroundColor: brandTheme.primary }}
                 className="p-2.5 rounded-lg text-white shadow-xs"
                 aria-label="Call Now"

@@ -73,7 +73,7 @@ export default function RefundPolicyPage() {
 
             <div className="border-t border-slate-100 pt-6 mt-8">
               <p className="text-xs text-slate-500 font-medium">
-                For refund processing or warranty support, please call our service desk at <a href={`tel:${BUSINESS_DETAILS.phone}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.phone}</a>.
+                For refund processing or warranty support, please call our service desk at <a href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`} className="text-sky-600 font-bold hover:underline">{BUSINESS_DETAILS.phone}</a>.
               </p>
             </div>
           </div>

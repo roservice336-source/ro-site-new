@@ -157,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({ currentRoute: propCurrentRoute, 
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-white/80 shrink-0" />
                 <a 
-                  href={`tel:${BUSINESS_DETAILS.phone}`} 
+                  href={`tel:${BUSINESS_DETAILS.phone.replace(/\s+/g, '')}`} 
                   className="text-white font-bold hover:underline"
                 >
                   {BUSINESS_DETAILS.phone}
