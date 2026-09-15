@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
               <div className="flex flex-col">
                 <span className="font-['Outfit',sans-serif] font-bold text-xl sm:text-2xl lg:text-[26px] tracking-tight text-[#0070e0] hover:text-[#005ec4] transition-colors leading-tight">
-                  Bangalore Service Centre
+                  {BUSINESS_DETAILS.name}
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-wider uppercase">
                   Doorstep RO Water Purifier Repair
